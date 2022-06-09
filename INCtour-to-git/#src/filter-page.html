@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Поиск" })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('_header.html',{}) -->
+      <!--  -->
+      @@include('_header.html',{})
+      <main class="page">
+        <!-- @@include('_page-header.html', { "pageHeader" : "Поиск туров", "imgPath" : "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" :
+        "./img/flags/4x3/fr.svg"}) -->
+        <!--  -->
+        <section class="page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Поиск туров</a></li>
+              </ul>
+            </div>
+
+            <div class="page-header__block block-page-header">
+              <div class="block-page-header__top">
+                <div class="block-page-header__img">
+                  <img src="./img/eiffel-tower-paris-europe.jpg" alt="Поиск туров" />
+                </div>
+              </div>
+
+              <div class="block-page-header__center">
+                <div class="block-page-header__title">Поиск туров</div>
+              </div>
+
+              <div class="block-page-header__bottom">
+                <div class="block-page-header__text">
+                  Жизнь современного человека сложно представить без путешествий. В масштабном плане это головокружительные турне в другие страны на отдаленные континенты, в более
+                  локальном это ежедневная дорога на работу и поездки к друзьям и родственникам на выходные. Желание же отправиться в путешествие в полной мере поможет Вам
+                  воплотить в реальность туристический оператор «Инкомартур 93». Мы предлагаем экскурсионные туры по самой выгодной цене в Украине, а самое главное — безопасность и
+                  максимальный комфорт во время вояжа.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+        <section class="filter-page">
+          <div class="filter-page__container _container">
+            <form class="filter-page__header filter-header">
+              <select class="filter-header__sort">
+                <option value="">Сортировать</option>
+                <option value="1">по ближайшей дате</option>
+                <option value="2">по убыванию цен</option>
+                <option value="3">по возрастанию цены</option>
+              </select>
+              <div class="filter-header__filter">
+                <button class="filter-header__reset">сбросить фильтр</button>
+                <a href="#filter" class="filter-header__filter-btn _popup-link">Фильтр</a>
+              </div>
+            </form>
+            <div class="filter-page__list">@@include('_card-list.html',{})</div>
+          </div>
+        </section>
+        <!--  -->
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    <!--  -->
+    <div class="popup popup_filter filter-popup">
+      <div class="filter-popup__content popup__content">
+        <div class="filter-popup__body popup__body">
+          <div class="filter-popup__close popup__close"></div>
+          <!-- <div class="filter-popup__header header-filter popup__header">
+            <div class="header-filter__search">
+              <div class="header-filter__search-wrapper">
+                <input type="text" />
+              </div>
+            </div>
+            <div class="header-filter__button">button</div>
+          </div> -->
+          <div class="filter-popup__form form-filter">
+            <form action="#" method="get" class="form-filter__form">
+              <div class="filter-popup__header header-filter popup__header">
+                <div class="header-filter__search">
+                  <div class="header-filter__search-wrapper">
+                    <input type="text" data-value="поиск по названию туров" />
+                  </div>
+                </div>
+                <div class="header-filter__button">button</div>
+              </div>
+              <div class="form-filter__main">
+                <div class="form-filter__column form-filter__column_left">
+                  <div class="form-filter__item filter-form-country has-scroll">
+                    <div class="filter-form-country__header form-filter__item_header">Страны</div>
+                    <div class="filterCountry filter-form-country__search" type="text">
+                      <input type="text" data-value="Поиск стран" />
+                    </div>
+                    <div class="filter-form-country__body country-filter">
+                      <div class="country-filter__list">
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input checked class="custom-radio__input" type="radio" value="all" name="country" id="country0" />
+                          <label class="custom-radio__label noselect" for="country0">Все страны<span>184</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="1" name="country" id="country1" />
+                          <label class="custom-radio__label noselect" for="country1">Египет<span>24</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="2" name="country" id="country2" />
+                          <label class="custom-radio__label noselect" for="country2">Нидерланды<span>38</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="3" name="country" id="country3" />
+                          <label class="custom-radio__label noselect" for="country3">Турция<span>45</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="4" name="country" id="country4" />
+                          <label class="custom-radio__label noselect" for="country4">Франция<span>32</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="5" name="country" id="country5" />
+                          <label class="custom-radio__label noselect" for="country5">Венгрия<span>21</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="6" name="country" id="country6" />
+                          <label class="custom-radio__label noselect" for="country6">Грузия<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="7" name="country" id="country7" />
+                          <label class="custom-radio__label noselect" for="country7">Израиль<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="8" name="country" id="country8" />
+                          <label class="custom-radio__label noselect" for="country8">Испания<span>18</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="9" name="country" id="country9" />
+                          <label class="custom-radio__label noselect" for="country9">Италия<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="10" name="country" id="country10" />
+                          <label class="custom-radio__label noselect" for="country10">Канада<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="11" name="country" id="country11" />
+                          <label class="custom-radio__label noselect" for="country11">Китай<span>6</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="12" name="country" id="country12" />
+                          <label class="custom-radio__label noselect" for="country12">Латвия<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="13" name="country" id="country13" />
+                          <label class="custom-radio__label noselect" for="country13">Литва<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="14" name="country" id="country14" />
+                          <label class="custom-radio__label noselect" for="country14">Нидерланды<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="15" name="country" id="country15" />
+                          <label class="custom-radio__label noselect" for="country15">Польша<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="16" name="country" id="country16" />
+                          <label class="custom-radio__label noselect" for="country16">Румыния<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="17" name="country" id="country17" />
+                          <label class="custom-radio__label noselect" for="country17">Словакия<span>14</span></label>
+                        </div>
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="18" name="country" id="country18" />
+                          <label class="custom-radio__label noselect" for="country18">Таиланд<span>14</span></label>
+                        </div>
+
+                        <div class="country-filter__item item-filter-country custom-radio">
+                          <input class="custom-radio__input" type="radio" value="20" name="country" id="country20" />
+                          <label class="custom-radio__label noselect" for="country20">Германия<span>14</span></label>
+                        </div>
+                      </div>
+
+                      <!-- <select name="form[]" class="form filter-form-country__select">
+                      <option value="4">Пункт №4</option>
+                    </select> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="form-filter__column form-filter__column_center">
+                  <div class="form-filter__item filter-form-type has-scroll">
+                    <div class="filter-form-type__header form-filter__item_header">Тип тура</div>
+                    <div class="filter-form-type__body">
+                      <div class="filter-form-type__list">
+                        <!--  -->
+                        <div class="filter-form-type__item item-filter-type custom-radio _active">
+                          <input checked class="custom-radio__input" type="radio" value="all" name="type" id="all" />
+                          <label class="custom-radio__label noselect _active" for="all">Все туры <span>23</span></label>
+                        </div>
+                        <!--  -->
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type1" name="type" id="type1" />
+                          <label class="custom-radio__label noselect" for="type1">Осенние туры<span>12</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type2" name="type" id="type2" />
+                          <label class="custom-radio__label noselect" for="type2">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type3" name="type" id="type3" />
+                          <label class="custom-radio__label noselect" for="type3">Горнолыжные туры<span>63</span></label>
+                        </div>
+
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type4" name="type" id="type4" />
+                          <label class="custom-radio__label noselect" for="type4">Экзотика<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type5" name="type" id="type5" />
+                          <label class="custom-radio__label noselect" for="type5">Пляжный отдых<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type6" name="type" id="type6" />
+                          <label class="custom-radio__label noselect" for="type6">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type7" name="type" id="type7" />
+                          <label class="custom-radio__label noselect" for="type7">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type8" name="type" id="type8" />
+                          <label class="custom-radio__label noselect" for="type8">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type6" name="type" id="type6" />
+                          <label class="custom-radio__label noselect" for="type6">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type7" name="type" id="type7" />
+                          <label class="custom-radio__label noselect" for="type7">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" value="type8" name="type" id="type8" />
+                          <label class="custom-radio__label noselect" for="type8">Отдых в декабре<span>14</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-filter__item filter-form-duration has-scroll">
+                    <div class="filter-form-duration__header form-filter__item_header">Количество дней</div>
+                    <div class="filter-form-duration__body">
+                      <div class="filter-form-duration__list">
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input checked class="custom-radio__input" type="radio" name="duration" id="duration3" value="3" />
+                          <label class="custom-radio__label noselect" for="duration3">3 дня</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration4" value="4" />
+                          <label class="custom-radio__label noselect" for="duration4">4 дня</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration5" value="5" />
+                          <label class="custom-radio__label noselect" for="duration5">5 дней</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration6" value="6" />
+                          <label class="custom-radio__label noselect" for="duration6">6 дней</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration7" value="7" />
+                          <label class="custom-radio__label noselect" for="duration7">7 дней</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-filter__column form-filter__column_right">
+                  <div class="form-filter__item filter-form-price">
+                    <div class="filter-form-price__header form-filter__item_header">Диапазон цен (грн)</div>
+                    <div class="filter-form-price__body price-filter">
+                      <div class="price-filter__range" data-from="500" data-to="20000"></div>
+                      <div class="price-filter__actions">
+                        <input onClick="this.select();" name="minprice" type="number" class="price-filter__min" value="500" />
+                        <input onClick="this.select();" name="maxprice" type="number" class="price-filter__max" value="20000" />
+                        <!-- <button class="price-filter__reset"></button> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-filter__item filter-form-transport">
+                    <div class="filter-form-transport__header form-filter__item_header">Транспорт</div>
+                    <div class="filter-form-transport__body">
+                      <div class="filter-form-transport__list">
+                        <div class="filter-form-transport__item item-filter-transport custom-radio">
+                          <input checked class="custom-radio__input" type="radio" name="transport" id="transport4" value="1" />
+                          <label class="custom-radio__label noselect" for="transport4">Все туры<span>122</span></label>
+                        </div>
+
+                        <div class="filter-form-transport__item item-filter-transport custom-radio">
+                          <input class="custom-radio__input" type="radio" name="transport" id="transport1" value="2" />
+                          <label class="custom-radio__label noselect" for="transport1">Авиа тур<span>48</span></label>
+                        </div>
+
+                        <div class="filter-form-transport__item item-filter-transport custom-radio">
+                          <input class="custom-radio__input" type="radio" name="transport" id="transport2" value="3" />
+                          <label class="custom-radio__label noselect" for="transport2">Автобусный тур<span>48</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-filter__item filter-form-date">
+                    <div class="filter-form-date__header form-filter__item_header">Выберите дату</div>
+                    <div class="filter-form-date__body">
+                      <div class="filter-form-date__item filter-form-date__start">
+                        <input autocomplete="off" type="text" name="date-start" data-error="Ошибка" class="input filter-input-start" />
+                      </div>
+                      <div class="filter-form-date__item filter-form-date__end">
+                        <input autocomplete="off" type="text" name="date-end" data-error="Ошибка" class="input filter-input-end" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-filter__item filter-form-branded">
+                    <div class="filter-form-branded__body">
+                      <div class="custom-checkbox">
+                        <input class="custom-checkbox__input" type="checkbox" name="brand" id="brand" value="2" />
+                        <label class="custom-checkbox__label noselect" for="brand">Только фирменные фильтры</label>
+                      </div>
+                    </div>
+                    <div class="filter-form-branded__info custom-checkbox__info">
+                      <a
+                        href="#"
+                        class="tooltip-link-click disabled"
+                        data-tippy-content="Собственные туры туроператоров “Incomearture 93” в сопровождении гидов"
+                        data-tippy-placement="top"
+                        ><span></span
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" class="form-filter__button btn btn__blue" value="Подобрать тур" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+    @@include('_popup.html',{})
+    <!--  -->
+
+    <!--  -->
+    @@include('_js.html',{})
+  </body>
+</html>

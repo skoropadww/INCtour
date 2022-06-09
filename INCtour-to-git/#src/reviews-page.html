@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Отзывы" })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('_header.html',{}) -->
+      <!--  -->
+      @@include('_header.html',{})
+      <main class="page reviews-page">
+        <!-- @@include('_page-header.html', { "pageHeader" : "Отзывы", "imgPath" : "./img/eiffel-tower-paris-europe.jpg",
+        "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/fr.svg"}) -->
+        <section class="page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Отзывы</a></li>
+              </ul>
+            </div>
+
+            <div class="page-header__block block-page-header">
+              <div class="block-page-header__top">
+                <div class="block-page-header__img">
+                  <img src="./img/eiffel-tower-paris-europe.jpg" alt="@@pageHeaderText" />
+                </div>
+              </div>
+
+              <div class="block-page-header__center">
+                <!-- <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div> -->
+                <!-- <div class="block-page-header__icon"><img src="@@flag" alt="" /></div> -->
+                <div class="block-page-header__title">Отзывы</div>
+              </div>
+
+              <div class="block-page-header__bottom">
+                <div class="block-page-header__text">
+                  Текст описание блок доп. инф: текст описание блок доп. инф: текст описание блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф: текст описание
+                  блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф: текст описание блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф:
+                  текст описание блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф: текст описание блок доп. инфТекст описание блок доп. инф: текст описание
+                  блок доп. инф: текст описание блок доп. инф
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <section class="reviews-page__sort sort-reviews-page">
+          <div class="sort-reviews-page__container _container">
+            <!--  -->
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__tour" placeholder="Select an item">
+                <option value="" disabled selected>по Туру</option>
+                <option value="1">название тура</option>
+                <option value="2">название тура</option>
+                <option value="3">название тура</option>
+              </select>
+            </div>
+            <!--  -->
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__guide">
+                <option value="" disabled selected>по Гиду</option>
+                <option value="1">имя гида</option>
+                <option value="2">имя гида</option>
+                <option value="3">имя гида</option>
+              </select>
+            </div>
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__date">
+                <option value="" disabled selected>по дате от-до</option>
+                <option value="1">от старых к новым</option>
+                <option value="2">от новых к старым</option>
+              </select>
+            </div>
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__rating">
+                <option value="" disabled selected>по оценке от-до</option>
+                <option value="1">от самой низкой</option>
+                <option value="2">от самой высокой</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        @@include('_single-reviews.html',{})
+        <!--  -->
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    @@include('_popup.html',{})
+    <!--  -->
+    @@include('_js.html',{})
+  </body>
+</html>
