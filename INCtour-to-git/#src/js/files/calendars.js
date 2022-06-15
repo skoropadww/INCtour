@@ -131,7 +131,59 @@ if (document.querySelector('.inner-calendar-page')) {
 //<Календари на странице календарь>====================================================================================================
 
 //<Календарь на странице Поиск тура>====================================================================================================
+// if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
+//   const dateOption = {
+//     id: 1,
+//     customDays,
+//     customMonths,
+//     overlayButton,
+//     overlayPlaceholder,
+//     dateSelected: new Date(),
+//     minDate: new Date(),
+//     startDay: 1,
+//     formatter: (input, date, instance) => {
+//       const value = date.toLocaleDateString()
+//       const val = value.split('.').reverse().join('-')
+//       input.value = val
+//     },
+//     onSelect: function (input, instance, date) {
+//       input_focus_add(input.el)
+//     },
+//   }
+
+//   document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
+//   const start = datepicker('.filter-input-start', dateOption)
+//   const end = datepicker('.filter-input-end', {
+//     id: 1,
+//     customDays,
+//     customMonths,
+//     overlayButton,
+//     overlayPlaceholder,
+//     minDate: new Date(),
+
+//     startDay: 1,
+//     formatter: (input, date, instance) => {
+//       const value = date.toLocaleDateString()
+//       const val = value.split('.').reverse().join('-')
+//       input.value = val
+//     },
+//     onSelect: function (input, instance, date) {
+//       input_focus_add(input.el)
+//     },
+//   })
+// }
+//<Календарь на странице Поиск тура>====================================================================================================
+
+//<Календарь на странице Поиск тура>====================================================================================================
 if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
+
+  const paramsString = document.location.search;
+  const searchParams = new URLSearchParams(paramsString);
+  let dateStart = searchParams.get("date-start");
+  let dateEnd = searchParams.get("date-end");
+
+  console.log(`${dateStart} /// ${dateEnd}`);
+
   const dateOption = {
     id: 1,
     customDays,
@@ -142,14 +194,34 @@ if (document.querySelector('.filter-form-date__start') || document.querySelector
     minDate: new Date(),
     startDay: 1,
     formatter: (input, date, instance) => {
-      const value = date.toLocaleDateString()
+      const value = date.toLocaleDateString();
       const val = value.split('.').reverse().join('-')
       input.value = val
     },
     onSelect: function (input, instance, date) {
       input_focus_add(input.el)
     },
+  };
+  const dateOptionEnd = {
+    id: 1,
+    customDays,
+    customMonths,
+    overlayButton,
+    overlayPlaceholder,
+    minDate: new Date(),
+    startDay: 1,
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const val = value.split('.').reverse().join('-')
+      input.value = val
+    },
+    onSelect: function (input, instance, date) {
+      input_focus_add(input.el)
+    }
   }
+
+
+
 
   document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
   const start = datepicker('.filter-input-start', dateOption)
@@ -160,7 +232,6 @@ if (document.querySelector('.filter-form-date__start') || document.querySelector
     overlayButton,
     overlayPlaceholder,
     minDate: new Date(),
-
     startDay: 1,
     formatter: (input, date, instance) => {
       const value = date.toLocaleDateString()
@@ -172,4 +243,3 @@ if (document.querySelector('.filter-form-date__start') || document.querySelector
     },
   })
 }
-//<Календарь на странице Поиск тура>====================================================================================================
